@@ -1,4 +1,4 @@
-#!/Users/erikdodd/projects/courses/madlib-cli/.venv/bin/python3.11
+#!/Users/erikdodd/projects/courses/madlib-cli/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

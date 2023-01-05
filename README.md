@@ -20,12 +20,16 @@ How to use your library (where applicable) - Not Applicable
 
 How do you run tests?
 
-- **pytest-watch**
+- **pytest-watch tests/test_madlib.py**
 
 Any tests of note?
 
 Describe any tests that you did not complete, skipped, etc
 
-- **Still working on the lab. Will complete and resubmit asap**
+- 
 
 Attributions:
+
+Special Thank you to Tammy Do. She helped me immensley when working on this problem by
+breaking things down step by step. We talked through each step and used print statements
+to make it easier to visualize. Thank you Tammy for being an all star tutor!
