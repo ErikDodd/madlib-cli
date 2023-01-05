@@ -16,28 +16,55 @@ def enter_adjectives_and_noun():
     second_adjective = input("> ")
     print("Please enter a noun")
     noun = input("> ")
+    pass
 
 
-def read_template():
+def read_template(path):
     """
     A function that reads a file in the asset folder, then returns a stripped string of the file contents
     """
-    with open("assets/dark_and_stormy_night_template.txt") as file:
+    print("path", path)
+    with open(path) as file:
         contents = file.read()
+        print("TEST 1", type(contents))
         return contents
 
 
-def parse_template():
-    # Need to use * operator to strip the string
-    pass
+def parse_template(template):
+    actual_stripped = ""
+    actual_adjective = []
+    cut_out_word = False
+    word = ""
+    stripped_template = template.strip()
+    for char in stripped_template:
+        if cut_out_word == True:
+            if char == "}":
+                actual_adjective.append(word)
+                actual_stripped += char
+                word = ""
+                cut_out_word = False
+            #if char != "}":
+            else:
+                word += char
+        else:
+            actual_stripped += char
+            if char == "{":
+                cut_out_word = True
+    return actual_stripped, tuple(actual_adjective)
 
 
-def merge():
-    # Use format () to insert user inputs into the placeholders
-    pass
 
 
-welcome_message()
-enter_adjectives_and_noun()
-read_template()
+
+
+
+def merge(actual_stripped, actual_adjective):
+    result = actual_stripped.format(*actual_adjective)
+    return result
+
+if __name__ == "__main__":
+    welcome_message()
+    enter_adjectives_and_noun()
+    path = "assets/dark_and_stormy_night_template.txt"
+    read_template(path)
 
